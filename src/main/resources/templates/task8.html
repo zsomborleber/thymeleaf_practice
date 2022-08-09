@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+</head>
+<body>
+<h1>Blogs</h1>
+<table>
+    <tr>
+        <th>Title:</th>
+        <th>Content:</th>
+        <th>Category:</th>
+        <th>Rated:</th>
+        <th>Published:</th>
+        <th>Created:</th>
+    </tr>
+    <tr data-th-each="blogData : ${blogs}">
+        <td data-th-text="${blogData.title}"></td>
+        <td data-th-text="${blogData.content}"></td>
+        <td data-th-text="${blogData.category}"></td>
+        <td data-th-text="${blogData.rating}"></td>
+        <td data-th-text="${blogData.published}"></td>
+        <td data-th-text="${blogData.create}"></td>
+
+    </tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task7</title>
+</head>
+<body>
+<h1>New Entry</h1>
+
+<form data-th-action="@{/task7}" data-th-object="${newEntry}" method="post">
+    <table>
+        <tr>
+            <th>Title:</th>
+            <td><input type="text" data-th-field="*{title}" /></td>
+        </tr>
+        <tr>
+            <th>Content:</th>
+            <td><input type="text" data-th-field="*{content}" /></td>
+        </tr>
+        <tr>
+            <th>Category:</th>
+            <td><input type="text" data-th-field="*{category}" /></td>
+        </tr>
+        <tr>
+            <th>Rating:</th>
+            <td><input type="number" data-th-field="*{rating}" /></td>
+        </tr>
+        <tr>
+            <th>Published:</th>
+            <td><input type="text" data-th-field="*{published}" /></td>
+        </tr>
+        <tr>
+            <th>Created:</th>
+            <td><input type="text" data-th-field="*{create}" /></td>
+        </tr>
+        <tr>
+            <td ><button type="submit">Create entry</button></td>
+        </tr>
+    </table>
+</form>
+
+<h1>Blogs</h1>
+<table>
+    <tr>
+        <th>Title:</th>
+        <th>Content:</th>
+        <th>Category:</th>
+        <th>Rated:</th>
+        <th>Published:</th>
+        <th>Created:</th>
+    </tr>
+    <tr data-th-each="blogData : ${blogs}">
+        <td data-th-text="${blogData.title}"></td>
+        <td data-th-text="${blogData.content}"></td>
+        <td data-th-text="${blogData.category}"></td>
+        <td data-th-text="${blogData.rating}"></td>
+        <td data-th-text="${blogData.published}"></td>
+        <td data-th-text="${blogData.create}"></td>
+
+    </tr>
+
+</table>
+
+
+</body>
+</html>

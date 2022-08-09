@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task6</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Title:</th>
+
+        <th>Content:</th>
+
+        <th>Category:</th>
+
+        <th>Rating:</th>
+
+        <th>Published:</th>
+
+        <th>LocalDate:</th>
+
+
+    </tr>
+    <tr data-th-each="taskData: ${entry}">
+        <td data-th-text="${taskData.title}"></td>
+        <td data-th-text="${taskData.content}"></td>
+        <td data-th-text="${taskData.category}"></td>
+        <td data-th-text="${taskData.rating}"></td>
+        <td data-th-text="${taskData.published}"
+            data-th-if="${taskData.published}"
+            style="font-weight: bold"></td>
+        <td data-th-text="${taskData.published}"
+            data-th-unless="${taskData.published}"></td>
+        <td data-th-text="${taskData.create}"></td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>

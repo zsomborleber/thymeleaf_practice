@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task3</title>
+</head>
+<body>
+
+<h1 data-th-text="${entry.title}"
+    data-th-if="${entry.category == 'Java'}"
+    style="background: black;color: white">Task1</h1>
+
+<h1 data-th-text="${entry.title}"
+    data-th-unless="${entry.category == 'Java'}"
+    style="background: purple ;color: darkgreen">Task1</h1>
+
+<p data-th-text="${entry.content}"></p>
+
+
+<p data-th-if="${entry.published}">Publikálva</p>
+<p data-th-unless="${entry.published }">Nincs Publikálva</p>
+
+
+
+<p data-th-if="${entry.rating &gt;3}">Ez egy jó cikk</p>
+
+
+<p data-th-switch="${entry.rating}">
+    <span data-th-case="1">Elégséges</span>
+    <span data-th-case="2">Elégséges</span>
+    <span data-th-case="3">közepes</span>
+    <span data-th-case="4">jó</span>
+    <span data-th-case="5">jeles</span>
+    <span data-th-case="*">UNKNOWN</span>
+</p>
+
+
+<p data-th-text="${entry.published ? ':)' : ':('}"></p>
+
+
+</body>
+</html>
